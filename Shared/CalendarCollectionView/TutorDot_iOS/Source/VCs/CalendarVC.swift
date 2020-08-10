@@ -82,6 +82,7 @@ class CalendarVC: UIViewController {
         setUpView()
         getClassList()
         setListDropDown()
+        print("firstWeekday", firstWeekDayOfMonth)
         
     }
     
@@ -273,6 +274,7 @@ extension CalendarVC {
         tutorCollectionView.dataSource = self
     }
     
+    // 로드 시 첫 뷰 셋업
     func setupCalendar() {
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentMonthIndexConstant = Calendar.current.component(.month, from: Date()) // 바뀌지 않는 이번달 변수
@@ -316,9 +318,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 날짜 뷰
         if collectionView == self.dateCollectionView {
-            // 위 아래 빈 셀들을 위해서
-            let count = numOfDaysInMonth[currentMonthIndex] + firstWeekDayOfMonth + 8
-            return count
+            return 42
         } else {
             // 해당 날짜에 수업이 없을 시 수업 추가 셀 리턴
             if classDateList.count == 0 {
@@ -337,7 +337,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         
         let currentMonthCalendarIndex = currentMonthIndex + 1
         let currentDateCalendarIndex = todaysDate
-        print("바뀔때", currentMonthCalendarIndex, currentDateCalendarIndex)
+        print("오늘 날짜", currentMonthCalendarIndex, currentDateCalendarIndex)
 
         // CalendarCollectionView
         if collectionView == self.dateCollectionView {
@@ -347,6 +347,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             if indexPath.item <= firstWeekDayOfMonth - 2 {
                 calendarCell.isHidden = false
                 calendarCell.dateLabel.textColor = UIColor.veryLightPinkThree
+                // 0 - 7 + 31 + 2
                 let prevDate = indexPath.row-firstWeekDayOfMonth+(numOfDaysInMonth[currentMonthIndex-1]+2)
                 print("첫째 요일", firstWeekDayOfMonth)
                 calendarCell.dateLabel.text="\(prevDate)"
@@ -376,7 +377,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 return calendarCell
             } // 이번달 표시
             else {
-                let calcDate = indexPath.row-firstWeekDayOfMonth+2
+                let calcDate = indexPath.row-firstWeekDayOfMonth+2 // 6 - 7 + 2
                 calendarCell.isHidden = false
                 calendarCell.dateLabel.textColor = UIColor.black
                 calendarCell.dateLabel.text="\(calcDate)"
