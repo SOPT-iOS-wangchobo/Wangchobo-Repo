@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var tabBarCollectionView: UICollectionView!
     @IBOutlet var underBarView: UIView!
     
@@ -23,14 +23,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tabBarCollectionView.delegate = self
         tabBarCollectionView.dataSource = self
-
+        
         underBarView.translatesAutoresizingMaskIntoConstraints = false
         let constraintHeight = underBarView.heightAnchor.constraint(equalToConstant: 2.0)
         let constraintTop = underBarView.topAnchor.constraint(equalTo: tabBarCollectionView.bottomAnchor)
         let constraintWidth = underBarView.widthAnchor.constraint(equalToConstant: tabBarCollectionView.frame.width / 2)
         print(view.frame.width)
         print(tabBarCollectionView.frame.width)
-
+        
         NSLayoutConstraint.activate([constraintHeight, constraintTop,constraintWidth])
         
         collectionView(tabBarCollectionView, didSelectItemAt: IndexPath(item: 0, section: 0))
@@ -83,20 +83,20 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate {
     //메뉴탭바에서 아이템 눌렀을 때 페이지뷰컨에 뷰컨 띄우기
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         let item = indexPath.item
         
         guard let pageInstance = self.pageInstance else {
             return
         }
-
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemCVCell.identifier, for: indexPath) as? MenuItemCVCell else {
             return
         }
-
-
+        
+        
         NSLayoutConstraint.activate(self.underBarConstraintList)
-
+        
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
@@ -145,8 +145,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
-//    UIEdgeInset
-
+    //    UIEdgeInset
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
