@@ -9,9 +9,6 @@ import UIKit
 import DropDown
 import Foundation
 
-protocol CalendarViewControllerDeleagte {
-    func didSelectDate(dateString: String)
-}
 
 class CalendarVC: UIViewController {
     
@@ -41,7 +38,7 @@ class CalendarVC: UIViewController {
     var firstWeekDayOfMonth = 0 //(일-토: 1-7)
     var lastWeekDayOfMonth = 0
     var currentMonthIndexConstant = 0
-    var delegate: CalendarViewControllerDeleagte?
+    //var delegate: CalendarViewControllerDeleagte?
     
     @IBOutlet weak var dateCollectionView: UICollectionView!
     @IBOutlet weak var tutorCollectionView: UICollectionView!
@@ -459,7 +456,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 monthHeaderLabel.text = "\(currentMonthIndex+1)월"
                 
                 // 선택된 날짜 다른 뷰컨에서 쓰기
-                self.delegate?.didSelectDate(dateString: "\(currentYear)-\(currentMonthIndex+1)-\(date)")
+                //self.delegate?.didSelectDate(dateString: "\(currentYear)-\(currentMonthIndex+1)-\(date)")
                 tutorCollectionView.reloadData() // 다른 날짜 클릭시 초기화
                 
                 // 날짜별로 해당하는 수업 리턴하기
