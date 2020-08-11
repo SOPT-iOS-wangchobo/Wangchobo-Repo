@@ -12,6 +12,7 @@ protocol SendDataDelegate{
     
     func sendData(data: String) // 메서드 정의만 해주세요.
 }
+
 class SendViewController: UIViewController {
     
     @IBOutlet weak var myTextField : UITextField!
