@@ -344,7 +344,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             if indexPath.item <= firstWeekDayOfMonth - 2 {
                 calendarCell.isHidden = false
                 calendarCell.dateLabel.textColor = UIColor.veryLightPinkThree
-                // 0 - 7 + 31 + 2
+                // 1 - 7 + 30 + 2
                 let prevDate = indexPath.row-firstWeekDayOfMonth+(numOfDaysInMonth[currentMonthIndex-1]+2)
                 print("첫째 요일", firstWeekDayOfMonth)
                 calendarCell.dateLabel.text="\(prevDate)"
