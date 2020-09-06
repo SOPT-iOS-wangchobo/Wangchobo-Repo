@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbo-b1-75N">
+                                <rect key="frame" x="100" y="144" width="175" height="134"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzm-Du-qpl">
+                                        <rect key="frame" x="0.0" y="45" width="175" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Wzm-Du-qpl" secondAttribute="trailing" id="CeC-L9-0zb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wzm-Du-qpl" secondAttribute="bottom" constant="45" id="JMQ-cK-Las"/>
+                                    <constraint firstAttribute="width" constant="175" id="cHV-ve-t0i"/>
+                                    <constraint firstAttribute="height" constant="134" id="igM-6w-s41"/>
+                                    <constraint firstItem="Wzm-Du-qpl" firstAttribute="top" secondItem="qbo-b1-75N" secondAttribute="top" constant="45" id="iof-Ei-K0F"/>
+                                    <constraint firstItem="Wzm-Du-qpl" firstAttribute="leading" secondItem="qbo-b1-75N" secondAttribute="leading" id="kkE-u9-USN"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uN1-2Z-WDx">
+                                <rect key="frame" x="169" y="561" width="37" height="34"/>
+                                <state key="normal" title="얍!">
+                                    <color key="titleColor" red="0.7440552185" green="0.5604188832" blue="0.93689328709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewAnimate1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hKb-IA-OGk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNy-MA-hB3">
+                                <rect key="frame" x="169" y="603" width="37" height="34"/>
+                                <state key="normal" title="얍얍!">
+                                    <color key="titleColor" red="0.60808519260000005" green="0.80486922510000003" blue="0.68200963599999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewAnimate2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xkw-yr-STL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uN1-2Z-WDx" secondAttribute="bottom" constant="217" id="JhS-cr-P53"/>
+                            <constraint firstItem="wNy-MA-hB3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KzT-fN-gRL"/>
+                            <constraint firstItem="wNy-MA-hB3" firstAttribute="top" secondItem="uN1-2Z-WDx" secondAttribute="bottom" constant="8" id="L9s-Yw-E2a"/>
+                            <constraint firstItem="uN1-2Z-WDx" firstAttribute="trailing" secondItem="wNy-MA-hB3" secondAttribute="trailing" id="NJB-6E-kSB"/>
+                            <constraint firstItem="uN1-2Z-WDx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ypq-tk-SB4"/>
+                            <constraint firstItem="qbo-b1-75N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="ZD9-ia-sTt"/>
+                            <constraint firstItem="qbo-b1-75N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="cnM-YG-SDI"/>
+                            <constraint firstItem="wNy-MA-hB3" firstAttribute="top" secondItem="uN1-2Z-WDx" secondAttribute="bottom" constant="8" id="o2W-xn-ibl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="yapButton" destination="uN1-2Z-WDx" id="LQK-DW-Khf"/>
+                        <outlet property="yapyapButton" destination="wNy-MA-hB3" id="ph6-E6-Tpa"/>
+                        <outlet property="yellowView" destination="qbo-b1-75N" id="PCq-P2-zp7"/>
+                        <outlet property="yellowViewHeight" destination="igM-6w-s41" id="U1o-9L-IAI"/>
+                        <outlet property="yellowViewLeading" destination="ZD9-ia-sTt" id="Wdf-LI-XoT"/>
+                        <outlet property="yellowViewTopConstraint" destination="cnM-YG-SDI" id="M6j-Wy-XG3"/>
+                        <outlet property="yellowViewWidth" destination="cHV-ve-t0i" id="kJg-0x-J4j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="291" y="31"/>
+        </scene>
+    </scenes>
+</document>
